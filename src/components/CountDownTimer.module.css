@@ -1,36 +1,51 @@
 .timerContainer {
   color: white;
   text-align: center;
-  padding: 2rem;
-  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
   min-height: 100vh;
+  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
+  align-items: center;
+  padding: 2rem;
 }
 
 .timeBoxes {
   display: flex;
-  justify-content: center;
   gap: 1rem;
-  margin: 2rem 0;
+  margin-top: 2rem;
   flex-wrap: wrap;
 }
 
 .timeBox {
-  background-color: #1f1f3d;
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  background-color: #1c1c34;
+  border-radius: 8px;
+  width: 80px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
-.socials {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  font-size: 1.5rem;
+/* Middle divider effect for card */
+.timeBox::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-50%);
+}
+
+.value {
+  color: #f25f9b;
+  font-size: 2.5rem;
+  font-weight: bold;
+  z-index: 1;
 }
 
 .label {
@@ -39,15 +54,13 @@
   margin-top: 0.5rem;
   display: block;
   color: #ccc;
+  text-align: center;
 }
 
 .socials {
-  margin-top: 2rem;
+  margin-top: 3rem;
   display: flex;
-  justify-content: center;
   gap: 1.5rem;
   font-size: 1.5rem;
 }
-
-
 

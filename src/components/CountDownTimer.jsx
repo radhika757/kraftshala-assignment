@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import styles from './CountDownTimer.module.css';
+import { useEffect, useState } from "react";
+import styles from "./CountDownTimer.module.css";
 
 const CountdownTimer = () => {
-const calculateTimeLeft = () => {
+  const calculateTimeLeft = () => {
     const targetDate = new Date();
     targetDate.setDate(targetDate.getDate() + 8);
     targetDate.setHours(23, 55, 41); // match image
@@ -13,10 +13,18 @@ const calculateTimeLeft = () => {
 
     if (difference > 0) {
       timeLeft = {
-        days: String(Math.floor(difference / (1000 * 60 * 60 * 24))).padStart(2, '0'),
-        hours: String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(2, '0'),
-        minutes: String(Math.floor((difference / 1000 / 60) % 60)).padStart(2, '0'),
-        seconds: String(Math.floor((difference / 1000) % 60)).padStart(2, '0')
+        days: String(Math.floor(difference / (1000 * 60 * 60 * 24))).padStart(
+          2,
+          "0"
+        ),
+        hours: String(
+          Math.floor((difference / (1000 * 60 * 60)) % 24)
+        ).padStart(2, "0"),
+        minutes: String(Math.floor((difference / 1000 / 60) % 60)).padStart(
+          2,
+          "0"
+        ),
+        seconds: String(Math.floor((difference / 1000) % 60)).padStart(2, "0"),
       };
     }
 
@@ -37,9 +45,18 @@ const calculateTimeLeft = () => {
       <h1>WE'RE LAUNCHING SOON</h1>
       <div className={styles.timeBoxes}>
         {Object.entries(timeLeft).map(([label, value]) => (
-          <div key={label} className="time-box">
-            <span className="value">{value}</span>
-            <span className="label">{label.toUpperCase()}</span>
+          <div
+            key={label}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <div className={styles.timeBox}>
+              <span className={styles.value}>{value}</span>
+            </div>
+            <span className={styles.label}>{label.toUpperCase()}</span>
           </div>
         ))}
       </div>
