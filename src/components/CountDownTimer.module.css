@@ -117,3 +117,56 @@
   opacity: 0.6;
   animation: twinkle 3s infinite ease-in-out;
 }
+
+.breakMobile {
+  display: inline;
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+   .mountains {
+    height: 250px;
+  }
+
+  .mountainSvg {
+    height: 250px;
+  }
+
+    .breakMobile {
+    display: block;
+    margin-top: 0.2rem;
+    text-align: center;
+  }
+
+  .timeBoxes {
+    flex-wrap: nowrap; 
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .timeBox {
+     width: 70px;
+    height: 80px;
+  }
+
+  .label {
+    font-size: 0.5rem;
+    letter-spacing: 2px;
+    margin-top: 1rem;
+  }
+
+  .value {
+    font-size: 2.5rem;
+  }
+
+  .timerContainer h1 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 5px;
+  }
+
+  .timerContainer{
+    padding: 0px;
+  }
+}

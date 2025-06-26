@@ -58,7 +58,7 @@ const CountdownTimer = () => {
           <div key={i} className={styles.star}></div>
         ))}
       </div>
-      <h1>WE'RE LAUNCHING SOON</h1>
+      <h1>WE'RE LAUNCHING <span className={styles.breakMobile}>SOON</span></h1>
       <div className={styles.timeBoxes}>
         {Object.entries(timeLeft).map(([label, value]) => (
           <div
