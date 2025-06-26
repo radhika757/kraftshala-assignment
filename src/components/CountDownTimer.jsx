@@ -40,8 +40,25 @@ const CountdownTimer = () => {
     return () => clearInterval(timer);
   }, []);
 
+useEffect(() => {
+  const stars = document.querySelectorAll(`.${styles.star}`);
+  stars.forEach((star) => {
+    const top = Math.random() * 100;
+    const left = Math.random() * 100;
+    star.style.top = `${top}%`;
+    star.style.left = `${left}%`;
+  });
+}, []);
+
+
   return (
     <div className={styles.timerContainer}>
+        {/* Rendring multiple random stars */}
+      <div className={styles.starrySky}>
+        {Array.from({ length: 100 }).map((_, i) => (
+          <div key={i} className={styles.star}></div>
+        ))}
+      </div>
       <h1>WE'RE LAUNCHING SOON</h1>
       <div className={styles.timeBoxes}>
         {Object.entries(timeLeft).map(([label, value]) => (
@@ -95,14 +112,24 @@ const CountdownTimer = () => {
       </div>
 
       <div className={styles.mountains}>
-        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <svg
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+          className={styles.mountainSvg}
+        >
           <path
-            fill="#1b1032"
-            fillOpacity="1"
-            d="M0,224L60,192C120,160,240,96,360,106.7C480,117,600,203,720,208C840,213,960,139,1080,128C1200,117,1320,171,1380,197.3L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-          />
+            fill="#1f0f2d"
+            fill-opacity="1"
+            d="M0,288L120,256C240,224,480,160,720,154.7C960,149,1200,203,1320,229.3L1440,256L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
+          ></path>
+          <path
+            fill="#2b193e"
+            fill-opacity="1"
+            d="M0,256L80,234.7C160,213,320,171,480,170.7C640,171,800,213,960,213.3C1120,213,1280,171,1360,149.3L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+          ></path>
         </svg>
       </div>
+      
     </div>
   );
 };
