@@ -72,3 +72,24 @@
   font-size: 1.5rem;
 }
 
+.socials svg {
+  fill: #d3cbd4; 
+  opacity: 0.85;
+  width: 22px;
+  height: 22px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mountains {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.mountains svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
