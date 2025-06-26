@@ -40,20 +40,19 @@ const CountdownTimer = () => {
     return () => clearInterval(timer);
   }, []);
 
-useEffect(() => {
-  const stars = document.querySelectorAll(`.${styles.star}`);
-  stars.forEach((star) => {
-    const top = Math.random() * 100;
-    const left = Math.random() * 100;
-    star.style.top = `${top}%`;
-    star.style.left = `${left}%`;
-  });
-}, []);
-
+  useEffect(() => {
+    const stars = document.querySelectorAll(`.${styles.star}`);
+    stars.forEach((star) => {
+      const top = Math.random() * 100;
+      const left = Math.random() * 100;
+      star.style.top = `${top}%`;
+      star.style.left = `${left}%`;
+    });
+  }, []);
 
   return (
     <div className={styles.timerContainer}>
-        {/* Rendring multiple random stars */}
+      {/* Rendring multiple random stars */}
       <div className={styles.starrySky}>
         {Array.from({ length: 100 }).map((_, i) => (
           <div key={i} className={styles.star}></div>
@@ -85,10 +84,17 @@ useEffect(() => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24">
+          <svg
+            width="14"
+            height="14"
+            fill="#d3cbd4"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.3 0-1.7.8-1.7 1.6V12h2.8l-.4 3h-2.4v7A10 10 0 0 0 22 12z" />
           </svg>
         </a>
+
         <a
           href="#"
           aria-label="Pinterest"
@@ -129,7 +135,6 @@ useEffect(() => {
           ></path>
         </svg>
       </div>
-      
     </div>
   );
 };
