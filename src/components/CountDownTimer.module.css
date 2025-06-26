@@ -10,6 +10,21 @@
   position: relative;
 }
 
+.timeBoxes {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.timeBox {
+  background-color: #1f1f3d;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
 .socials {
   margin-top: 2rem;
   display: flex;
@@ -18,6 +33,21 @@
   font-size: 1.5rem;
 }
 
+.label {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+  display: block;
+  color: #ccc;
+}
+
+.socials {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+}
 
 
 
